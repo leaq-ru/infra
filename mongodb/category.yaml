@@ -1,0 +1,8 @@
+apiVersion: mongodb.com/v1
+kind: MongoDB
+metadata:
+  name: mongodb-category
+spec:
+  members: 1
+  type: ReplicaSet
+  version: "4.4.0"

@@ -1,0 +1,44 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: stan
+spec:
+  storageClassName: do-block-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: streaming.nats.io/v1alpha1
+kind: NatsStreamingCluster
+metadata:
+  name: stan
+spec:
+  size: 1
+  natsSvc: nats
+  config:
+    storeDir: /stan
+    ftGroup: stan
+  template:
+    spec:
+      volumes:
+        - name: stan
+          persistentVolumeClaim:
+            claimName: stan
+      containers:
+        - name: nats-streaming
+          args:
+            - "--store"
+            - "FILE"
+            - "--max_msgs"
+            - "0"
+            - "--max_bytes"
+            - "0"
+            - "--max_age"
+            - "720h"
+          volumeMounts:
+            - mountPath: /stan
+              name: stan
