@@ -1,8 +1,7 @@
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: stan
+  name: stan-pvc
 spec:
   storageClassName: do-block-storage
   accessModes:
@@ -25,9 +24,9 @@ spec:
   template:
     spec:
       volumes:
-        - name: stan
+        - name: stan-volume
           persistentVolumeClaim:
-            claimName: stan
+            claimName: stan-pvc
       containers:
         - name: nats-streaming
           args:
@@ -40,5 +39,5 @@ spec:
             - "--max_age"
             - "720h"
           volumeMounts:
-            - mountPath: /stan
-              name: stan
+            - name: stan-volume
+              mountPath: /stan
