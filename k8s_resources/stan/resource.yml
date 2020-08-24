@@ -35,7 +35,7 @@ spec:
             - "--max_msgs"
             - "0"
             - "--max_bytes"
-            - "1048576"
+            - "1073741824"
             - "--max_age"
             - "720h"
           volumeMounts:
