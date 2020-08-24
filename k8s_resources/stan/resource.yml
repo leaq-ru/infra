@@ -30,14 +30,14 @@ spec:
       containers:
         - name: nats-streaming
           args:
-            - "--store"
-            - "FILE"
-            - "--max_msgs"
-            - "0"
-            - "--max_bytes"
-            - "0"
-            - "--max_age"
-            - "720h"
+            - --store
+            - FILE
+            - --max_msgs
+            - 0
+            - --max_bytes
+            - 1048576
+            - --max_age
+            - 720h
           volumeMounts:
             - name: stan-volume
               mountPath: /stan
