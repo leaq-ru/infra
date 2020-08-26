@@ -12,13 +12,13 @@ spec:
         - api.leaq.ru
       secretName: leaq-tls
   rules:
-#    - host: leaq.ru
+    - host: leaq.ru
 #      http:
 #        paths:
 #          - backend:
 #              serviceName: web
 #              servicePort: 80
-#    - host: api.leaq.ru
+    - host: api.leaq.ru
 #      http:
 #        paths:
 #          - backend:
