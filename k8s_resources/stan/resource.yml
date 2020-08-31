@@ -38,8 +38,6 @@ spec:
             - "1073741824"
             - "--max_age"
             - "720h"
-            - "--http_port"
-            - "8222"
           volumeMounts:
             - name: stan-volume
               mountPath: /stan
