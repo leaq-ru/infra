@@ -21,7 +21,6 @@ spec:
   config:
     storeDir: /stan
     ftGroup: stan
-    fileTruncateBadEOF: true
   template:
     spec:
       volumes:
@@ -39,6 +38,7 @@ spec:
             - "1073741824"
             - "--max_age"
             - "720h"
+            - "--file_truncate_bad_eof"
           volumeMounts:
             - name: stan-volume
               mountPath: /stan
