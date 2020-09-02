@@ -8,7 +8,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 2Gi
 
 ---
 apiVersion: streaming.nats.io/v1alpha1
@@ -38,7 +38,6 @@ spec:
             - "1073741824"
             - "--max_age"
             - "720h"
-            - "--file_truncate_bad_eof"
           volumeMounts:
             - name: stan-volume
               mountPath: /stan
