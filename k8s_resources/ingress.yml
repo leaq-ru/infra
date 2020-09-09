@@ -20,8 +20,8 @@ spec:
 #              serviceName: web
 #              servicePort: 80
     - host: api.leaq.ru
-#      http:
-#        paths:
-#          - backend:
-#              serviceName: api
-#              servicePort: 80
+      http:
+        paths:
+          - backend:
+              serviceName: api
+              servicePort: 80
