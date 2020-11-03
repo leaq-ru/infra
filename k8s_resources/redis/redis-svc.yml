@@ -8,6 +8,5 @@ spec:
   ports:
     - port: 6379
       name: client
-  clusterIP: None
   selector:
     app: redis
