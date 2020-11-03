@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: stan
+spec:
+  serviceName: stan
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stan
+  template:
+    metadata:
+      labels:
+        app: stan
+    spec:
+      volumes:
+        - name: data-stan
+          persistentVolumeClaim:
+            claimName: data-stan
+      containers:
+        - name: stan
+          image: nats-streaming:0.19-alpine
+          ports:
+            - containerPort: 4222
+              name: client
+            - containerPort: 8222
+              name: monitoring
+          command:
+            - "nats-streaming-server"
+            - "--cluster_id"
+            - "stan"
+            - "--store"
+            - "FILE"
+            - "--dir"
+            - "/data"
+            - "--max_msgs"
+            - "0"
+            - "--max_bytes"
+            - "1073741824"
+            - "--max_age"
+            - "4320h"
+            - "--nats_server"
+            - "nats://nats:4222"
+          resources:
+            requests:
+              cpu: 4m
+              memory: 57Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+          volumeMounts:
+            - name: data-stan
+              mountPath: /data
+              readOnly: false

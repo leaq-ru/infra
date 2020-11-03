@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: redis:6.0.9-alpine
+          image: redis:6.0-alpine
           ports:
             - containerPort: 6379
               name: client
@@ -35,8 +35,8 @@ spec:
             - "/conf/redis.conf"
           resources:
             requests:
-              cpu: 3m
-              memory: 3Mi
+              cpu: 2m
+              memory: 11Mi
             limits:
               cpu: 500m
               memory: 500Mi
