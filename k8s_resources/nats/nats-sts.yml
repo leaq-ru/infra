@@ -23,7 +23,7 @@ spec:
               name: monitoring
           resources:
             requests:
-              cpu: 3m
+              cpu: 21m
               memory: 10Mi
             limits:
               cpu: "1"
