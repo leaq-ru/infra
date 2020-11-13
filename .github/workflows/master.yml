@@ -23,4 +23,4 @@ jobs:
         run: doctl kubernetes cluster kubeconfig save k8s
 
       - name: Apply all resources
-        run: kubectl -n leaq apply -f ${{ github.workspace }}/k8s_resources --recursive
+        run: kubectl apply -f ${{ github.workspace }}/k8s-resources --recursive
