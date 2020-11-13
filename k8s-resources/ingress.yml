@@ -32,10 +32,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ingress-nginx-controller
-  namespace: ingress-nginx
-  labels:
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+  name: nginx-config
+  namespace: nginx-ingress
 data:
   use-http2: "false"
