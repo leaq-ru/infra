@@ -2,6 +2,7 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   name: api
+  namespace: leaq
 spec:
   minAvailable: 1
   selector:
