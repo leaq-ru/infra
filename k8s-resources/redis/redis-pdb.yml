@@ -1,7 +1,7 @@
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
-  name: api
+  name: redis
   namespace: leaq
 spec:
   minAvailable: 1
