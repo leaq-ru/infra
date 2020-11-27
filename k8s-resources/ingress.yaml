@@ -27,3 +27,9 @@ spec:
           - backend:
               serviceName: api
               servicePort: 80
+    - host: test.leaq.ru
+      http:
+        paths:
+          - backend:
+              serviceName: test-web
+              servicePort: 80
