@@ -13,6 +13,7 @@ spec:
     - hosts:
         - leaq.ru
         - api.leaq.ru
+        - test.leaq.ru
       secretName: leaq-tls
   rules:
     - host: leaq.ru
