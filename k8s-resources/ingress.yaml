@@ -9,11 +9,11 @@ metadata:
 #    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
-  tls:
-    - hosts:
-        - leaq.ru
-        - api.leaq.ru
-      secretName: leaq-tls
+#  tls:
+#    - hosts:
+#        - leaq.ru
+#        - api.leaq.ru
+#      secretName: leaq-tls
   rules:
     - host: leaq.ru
       http:
