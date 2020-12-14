@@ -37,11 +37,11 @@ spec:
             - "/conf/redis.conf"
           resources:
             requests:
-              cpu: 2m
+              cpu: 100m
               memory: 11Mi
             limits:
-              cpu: 500m
-              memory: 500Mi
+              cpu: "1"
+              memory: 1Gi
           volumeMounts:
             - name: conf
               mountPath: /conf
