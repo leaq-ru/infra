@@ -25,10 +25,6 @@ spec:
     metadata:
       labels:
         app: redis
-      annotations:
-        linkerd.io/inject: enabled
-        config.linkerd.io/proxy-cpu-request: 10m
-        config.linkerd.io/proxy-memory-request: 10Mi
     spec:
       containers:
         - name: redis
