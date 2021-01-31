@@ -37,7 +37,7 @@ spec:
             - "--max_msgs"
             - "0"
             - "--max_bytes"
-            - "1073741824"
+            - "3221225472"
             - "--max_age"
             - "4320h"
             - "--nats_server"
