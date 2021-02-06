@@ -42,7 +42,6 @@ spec:
             - "4320h"
             - "--nats_server"
             - "nats://nats:4222"
-            - "--file_truncate_bad_eof"
           resources:
             requests:
               cpu: 65m
