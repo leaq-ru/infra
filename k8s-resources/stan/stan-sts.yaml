@@ -44,8 +44,8 @@ spec:
             - "nats://nats:4222"
           resources:
             requests:
-              cpu: 65m
-              memory: 50Mi
+              cpu: 150m
+              memory: 100Mi
             limits:
               cpu: "1"
               memory: 1Gi
