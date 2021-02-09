@@ -45,10 +45,10 @@ spec:
           resources:
             requests:
               cpu: 150m
-              memory: 100Mi
+              memory: 400Mi
             limits:
               cpu: "1"
-              memory: 1Gi
+              memory: 1.5Gi
           volumeMounts:
             - name: data-stan
               mountPath: /data
