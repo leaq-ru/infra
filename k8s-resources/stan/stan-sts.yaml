@@ -20,7 +20,7 @@ spec:
             claimName: data-stan
       containers:
         - name: stan
-          image: nats-streaming:0.19-alpine
+          image: nats-streaming:0.21
           ports:
             - containerPort: 4222
               name: client
