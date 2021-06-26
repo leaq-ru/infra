@@ -13,6 +13,7 @@ spec:
     - hosts:
         - leaq.ru
         - api.leaq.ru
+        - admin-bot.leaq.ru
       secretName: leaq-tls
   rules:
     - host: leaq.ru
@@ -26,4 +27,10 @@ spec:
         paths:
           - backend:
               serviceName: api
+              servicePort: 80
+    - host: admin-bot.leaq.ru
+      http:
+        paths:
+          - backend:
+              serviceName: admin-bot
               servicePort: 80
