@@ -16,8 +16,8 @@ spec:
     spec:
       volumes:
         - name: data-stan
-          persistentVolumeClaim:
-            claimName: data-stan
+          emptyDir:
+            sizeLimit: 70Gi
       containers:
         - name: stan
           image: nats-streaming:0.21
@@ -36,9 +36,9 @@ spec:
             - "--max_msgs"
             - "0"
             - "--max_bytes"
-            - "0"
+            - "64424509440"
             - "--max_age"
-            - "168h"
+            - "720h"
             - "--nats_server"
             - "nats://nats:4222"
           resources:
