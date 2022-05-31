@@ -14,11 +14,6 @@ spec:
         - leaq.ru
         - api.leaq.ru
         - admin-bot.leaq.ru
-        - static.leaq.ru
-        - exporter.leaq.ru
-        - download.leaq.ru
-        - sitemap.leaq.ru
-        - image.leaq.ru
       secretName: leaq-tls
   rules:
     - host: leaq.ru
