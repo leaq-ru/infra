@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/limit-connections: "2"
-    nginx.ingress.kubernetes.io/limit-rpm: "30"
+    nginx.ingress.kubernetes.io/limit-rpm: "10"
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   tls:
