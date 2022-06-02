@@ -17,6 +17,7 @@ spec:
       containers:
         - name: memcached
           image: memcached
+          command: memcached -vv
           ports:
             - containerPort: 11211
               name: client
