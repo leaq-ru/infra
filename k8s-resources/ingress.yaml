@@ -1,10 +1,10 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
   namespace: leaq
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: nginx-2
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/limit-connections: "5"
@@ -21,18 +21,30 @@ spec:
     - host: leaq.ru
       http:
         paths:
-          - backend:
-              serviceName: web
-              servicePort: 80
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: web
+                port:
+                  number: 80
     - host: api.leaq.ru
       http:
         paths:
-          - backend:
-              serviceName: api
-              servicePort: 80
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: api
+                port:
+                  number: 80
     - host: admin-bot.leaq.ru
       http:
         paths:
-          - backend:
-              serviceName: admin-bot
-              servicePort: 80
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: admin-bot
+                port:
+                  number: 80
