@@ -12,14 +12,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/limit-connections: "5"
     nginx.ingress.kubernetes.io/limit-rpm: "180"
-    cert-manager.io/cluster-issuer: letsencrypt
 spec:
-  tls:
-    - hosts:
-        - leaq.ru
-        - api.leaq.ru
-        - admin-bot.leaq.ru
-      secretName: leaq-tls
   rules:
     - host: leaq.ru
       http:
