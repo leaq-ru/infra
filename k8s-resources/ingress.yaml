@@ -40,6 +40,7 @@ metadata:
 spec:
   tls:
     - hosts:
+        - leaq.ru
         - api.leaq.ru
         - admin-bot.leaq.ru
       secretName: leaq-tls
