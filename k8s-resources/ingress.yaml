@@ -37,6 +37,10 @@ metadata:
     nginx.ingress.kubernetes.io/limit-connections: "5"
     nginx.ingress.kubernetes.io/limit-rpm: "180"
     cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/server-snippet: |
+      if ($host = 'leaq.ru') {
+      return 301 http://leaq.ru$request_uri;
+    }
 spec:
   tls:
     - hosts:
