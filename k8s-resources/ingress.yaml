@@ -45,6 +45,16 @@ spec:
         - admin-bot.leaq.ru
       secretName: leaq-tls
   rules:
+    - host: leaq.ru
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: web
+                port:
+                  number: 80
     - host: api.leaq.ru
       http:
         paths:
