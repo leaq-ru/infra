@@ -10,8 +10,6 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/hsts: "false"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    nginx.ingress.kubernetes.io/limit-connections: "5"
-    nginx.ingress.kubernetes.io/limit-rpm: "180"
 spec:
   rules:
     - host: leaq.ru
