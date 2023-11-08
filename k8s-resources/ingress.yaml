@@ -1,45 +1,15 @@
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-#  name: ingress-web
-#  namespace: leaq
-#  annotations:
-#    kubernetes.io/ingress.class: nginx
-#    nginx.ingress.kubernetes.io/enable-cors: "true"
-#    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-#    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-#    nginx.ingress.kubernetes.io/hsts: "false"
-#spec:
-#  rules:
-#    - host: leaq.ru
-#      http:
-#        paths:
-#          - path: /
-#            pathType: ImplementationSpecific
-#            backend:
-#              service:
-#                name: web
-#                port:
-#                  number: 80
-
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: ingress-web
   namespace: leaq
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/hsts: "false"
 spec:
-  tls:
-    - hosts:
-        - leaq.ru
-        - api.leaq.ru
-        - admin-bot.leaq.ru
-      secretName: leaq-tls
   rules:
     - host: leaq.ru
       http:
@@ -51,6 +21,24 @@ spec:
                 name: web
                 port:
                   number: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: leaq
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  tls:
+    - hosts:
+        - api.leaq.ru
+        - admin-bot.leaq.ru
+      secretName: leaq-tls
+  rules:
     - host: api.leaq.ru
       http:
         paths:
