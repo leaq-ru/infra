@@ -10,10 +10,6 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/hsts: "false"
 spec:
-  tls:
-    - hosts:
-        - leaq.ru
-      secretName: leaq-tls
   rules:
     - host: leaq.ru
       http:
@@ -39,6 +35,7 @@ metadata:
 spec:
   tls:
     - hosts:
+        - leaq.ru
         - api.leaq.ru
         - admin-bot.leaq.ru
       secretName: leaq-tls
