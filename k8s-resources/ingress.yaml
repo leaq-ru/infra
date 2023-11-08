@@ -14,7 +14,7 @@ spec:
   tls:
     - hosts:
         - leaq.ru
-      secretName: leaq-tls-web
+      secretName: leaq-tls
   rules:
     - host: leaq.ru
       http:
