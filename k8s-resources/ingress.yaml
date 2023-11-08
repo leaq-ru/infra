@@ -9,7 +9,6 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/hsts: "false"
-    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   tls:
     - hosts:
