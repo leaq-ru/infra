@@ -11,6 +11,10 @@ metadata:
     nginx.ingress.kubernetes.io/hsts: "false"
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  tls:
+    - hosts:
+        - leaq.ru
+      secretName: leaq-tls-web
   rules:
     - host: leaq.ru
       http:
